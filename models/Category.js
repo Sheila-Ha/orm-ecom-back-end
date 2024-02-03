@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection.js");
-//Create a new squelized model for category
+//Create a new sequelize model for category
 class Category extends Model {}
 
 Category.init(
@@ -28,4 +28,6 @@ Category.init(
   }
 );
 
-module.exports = Category;
+const seedCategories = () =>.bulkCreate(categoryData);
+
+module.exports = seedCategory;
