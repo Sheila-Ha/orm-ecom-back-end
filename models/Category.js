@@ -28,6 +28,6 @@ Category.init(
   }
 );
 
-const seedCategories = () =>.bulkCreate(categoryData);
 
-module.exports = seedCategory;
+module.exports = Category;
+0

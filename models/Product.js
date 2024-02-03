@@ -26,6 +26,9 @@ Product.init(
     price: {
       type: DECIMAL,
       allowNull: false,
+      validate: {
+        isAlphanumeric: true,
+      },
     },
 
     stock: {
@@ -51,7 +54,7 @@ Product.init(
     freezeTableName: true,
     underscored: true,
     modelName: "product",
-  }
+  },
 );
 
 module.exports = Product;
