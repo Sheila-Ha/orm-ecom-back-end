@@ -32,12 +32,17 @@ Product.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 10,
+      validate: {
+        isAlphanumeric: true,
+      },
     },
 
     category_id: {
       type: INTEGER,
-      model: "Category",
-      key: "id",
+      references: {
+        model: "Category",
+        key: "id",
+      },
     },
   },
   {
