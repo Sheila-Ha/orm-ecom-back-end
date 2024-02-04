@@ -38,13 +38,13 @@ router.get("/:id", async (req, res) => {
     });
     res.status(200).json(tagData);
   } catch (err) {
-    return res.status(500).json({ err });
+    return res.status(500).json({ message: "No tag with this id" });
   }
 });
 
 // The endpoint `/api/tags`
 // Create a new tag
-// Sequelize uses to create a new tag w/ data found in req.body
+// Sequelize used to create a new tag w/ data found in req.body
 router.post("/", async (req, res) => {
   try {
     const tagData = await Tag.create({
@@ -56,12 +56,42 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", (req, res) => {
-  // update a tag's name by its `id` value
+// Update a tag's name by its `id` value
+// Sequelize used to get a singular tag by it's `id`
+router.put("/:id", async (req, res) => {
+  try {
+    const tagData = await Tag.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!tagDate[0]) {
+      res.status(404).json({ message: "No tag with this id" });
+      return;
+    }
+    res.status(200).json(tagData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.delete("/:id", (req, res) => {
-  // delete on tag by its `id` value
+// Delete on tag by its `id` value
+// Sequelize uses destroy to delete based on the JSON response
+router.delete("/:id", async (req, res) => {
+  try {
+    const tagData = await Tag.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!tagData) {
+      res.status(404).json({ message: "No tag with this id" });
+      return;
+    }
+    res.status(200).json(tagData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
