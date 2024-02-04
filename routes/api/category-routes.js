@@ -1,14 +1,22 @@
+// Express router class, used to define routes for dealing with different HTTP methods
 const router = require("express").Router();
+// Extracting multiple values to extract specific objects. (productTag, product, tag)
 const { Category, Product } = require("../../models");
 
 // The `/api/categories` endpoint
-
+// Async and await used to handle routes asynchronously
+// Sequelize is used to fetch all catagories from DB
+// Find all categories
+// Be sure to include its associated Products
 router.get("/", async (req, res) => {
-  // find all categories
-  // be sure to include its associated Products
+ 
   try {
     const categoryData = await Category.findAll({
-      include: [{ model: Product }],
+      include: [
+        {
+          model: Product,
+        },
+      ],
     });
     res.status(200).json(categoryData);
   } catch (err) {
@@ -17,8 +25,8 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  // find one category by its `id` value
-  // be sure to include its associated Products
+  // Find one category by its `id` value
+  // Be sure to include its associated Products
   try {
     const categoryData = await Category.findOne({
       where: {
@@ -32,13 +40,13 @@ router.get("/:id", async (req, res) => {
     }
     req.status(200).json(categoryData);
   } catch (err) {
-    // console.log(err);
+    console.log(err);
     res.status(500).json(err);
   }
 });
 
 router.post("/", async (req, res) => {
-  // create a new category
+  // Create a new category
   try {
     const categoryData = await Category.create({
       category_name: req.body.category_name,
@@ -50,7 +58,7 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
-  // update a category by its `id` value
+  // Update a category by its `id` value
   try {
     const categoryData = await Category.update(req.body, {
       where: {
@@ -69,7 +77,7 @@ router.put("/:id", async (req, res) => {
 });
 
 router.delete("/:id", async (req, res) => {
-  // delete a category by its `id` value
+  // Delete a category by its `id` value
   try {
     const categoryData = await Category.destroy({
       where: {

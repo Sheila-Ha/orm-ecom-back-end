@@ -1,11 +1,15 @@
+// Express router class, used to define routes for dealing with different HTTP methods
 const router = require("express").Router();
+// Extracting multiple values to extract specific objects. (productTag, product, tag)
 const { Tag, Product, ProductTag } = require("../../models");
 
 // The `/api/tags` endpoint
 // Async and await used to handle routes asynchronously
 // Sequelize is used to fetch all tags from DB
+// Find all tags include its associated Product data
+// Be sure to include its associated Product data
 router.get("/", async (req, res) => {
-  // Find all tags include its associated Product data
+ 
   try {
     const tagData = await Tag.findAll({
       include: [
@@ -71,6 +75,7 @@ router.put("/:id", async (req, res) => {
     }
     res.status(200).json(tagData);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
