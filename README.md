@@ -2,7 +2,7 @@
 by Sheila Hanson ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description <!-- omit from toc -->
-- 
+- This applications serves as the  back-end for an e-commerce website. It is built with Object Relational Mapping (ORM). This design is made to be used with a front-end e-commerce application. It provides API's to manage products, categories, and tags. This application uses Express.js for the server, Sequelize as the ORM and MySQL for the database. Once you are set up, run the API locally, you can interact with it using Insomnia and perform CRUD operations.
 
 ## Table of Contents <!-- omit from toc -->
   
@@ -21,7 +21,16 @@ by Sheila Hanson ![Github license](https://img.shields.io/badge/license-MIT-blue
     
 
 ## Installation
-
+- Clone the repository to get your starter code  
+- Install dependencies
+  - npm install
+  -  MySQL2  
+     -  Create your db by running schema.sql file using MYSQL shell commands
+        -  mysql -u root -p
+        -  password - "enter your password"
+  - Sequelize  
+  - dotenv package  
+- 
     
   
   ### User Story
@@ -55,26 +64,26 @@ THEN I am able to successfully create, update, and delete data in my database
   [My Wireframe]()
       
 ## Usage 
- 
-
-   ![Screenshot]()
-
+ - This application is obtained through a CLI or integrated terminal.
+ - Database Model Diagram  
+![alt text](<assets/img/EER Diagram.png>)  
+  
   DEMO: (https://)
 
 ## Features
-
+- MySQL workbench database model EER diagram
 
 ## Challenges
-
+- Continuing to learn SQL Workbench
+- Gaining a better knowledge of Insomnia
 
 ## Contributing
-[NPM](https://www.npmjs.com/package/inquirer/v/8.2.4?activeTab=readme#installation) 
-[Jest](https://jestjs.io/)  
+[NPM](https://www.npmjs.com/package/inquirer/v/8.2.4?activeTab=readme#installation)  
 [Inquirer](https://www.npmjs.com/package/inquirer/v/8.2.4)  
 [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web)    
 [Node.js](https://nodejs.org/docs/latest/api/)    
 [Stack Overflow](https://stackoverflow.com/?newreg=67d94556b887449fa2885dadf54a5439)  
-[HTML Cheatsheet](https://htmlcheatsheet.com/js/)  
+[JS Cheatsheet](https://htmlcheatsheet.com/js/)  
 [W3school](https://www.w3schools.com/)  
 [DEV](https://dev.to/envoy_/150-badges-for-github-pnk#contact)  
 [Shields](https://shields.io/)  
@@ -85,9 +94,7 @@ This project is licensed under MIT
 
 
 ## Testing
-
-
-    
+- You must use Insomnia API     
 
 ## Questions
 ![Ask me anything](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)
