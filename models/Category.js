@@ -18,7 +18,6 @@ Category.init(
       allowNull: false,
     },
   },
-
   {
     sequelize,
     timestamps: false,
@@ -30,4 +29,3 @@ Category.init(
 
 
 module.exports = Category;
-0

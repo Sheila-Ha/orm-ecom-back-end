@@ -6,10 +6,10 @@ const { Product, Category, Tag, ProductTag } = require("../../models");
 // The `/api/products` endpoint
 // Async and await used to handle routes asynchronously
 // Sequelize is used to fetch all products from DB
-
+// Get all products
+// Be sure to include its associated Category and Tag data
 router.get("/", async (req, res) => {
-  // Get all products
-  // Be sure to include its associated Category and Tag data
+ 
   try {
     const productData = await Product.findAll({
       include: [
