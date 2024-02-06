@@ -5,6 +5,7 @@ const { Category, Product } = require("../../models");
 
 // The `/api/categories` endpoint
 router.get("/", async (req, res) => {
+  //console.log("I AM IN GET '/'");
 // Sequelize is used to fetch all catagories from DB
 // Find all categories
 // Be sure to include its associated Products
@@ -22,7 +23,9 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Ex: http://localhost:3001/api/categories/4
 router.get("/:id", async (req, res) => {
+  //console.log(req.params.id);
   // Find one category by its `id` value
   // Be sure to include its associated Products
   try {
@@ -36,7 +39,7 @@ router.get("/:id", async (req, res) => {
       res.status(400).json({ message: "No category found with that ID" });
       return;
     }
-    req.status(200).json(categoryData);
+    res.status(200).json(categoryData);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
