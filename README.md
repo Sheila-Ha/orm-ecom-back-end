@@ -33,13 +33,12 @@ by Sheila Hanson ![Github license](https://img.shields.io/badge/license-MIT-blue
            -  source db/schema.sql  
            -  quit (this is going to end the sql shell = Bye)  
         - Run seeds by typing in terminal  
+          - npm i
           - npm run seed  
         - Start server  
           - npm run watch  
            - response on last line = App listening on port 3001!  
         - run npm i to make sure all the dependencies are installed before you begin  
- 
-- 
     
   
   ### User Story

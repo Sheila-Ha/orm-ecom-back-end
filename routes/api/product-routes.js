@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
           model: Tag,
           attributes: ["tag_name"],
           through: ProductTag,
-          as: "tags",
+          as: "productTag_products",
         },
       ],
     });

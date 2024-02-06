@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
         {
           model: Product,
           through: ProductTag,
-          as: "products",
+          as: "productTag_products",
         },
       ],
     });
