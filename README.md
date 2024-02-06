@@ -24,12 +24,21 @@ by Sheila Hanson ![Github license](https://img.shields.io/badge/license-MIT-blue
 - Clone the repository to get your starter code  
 - Install dependencies
   - npm install
-  -  MySQL2  
-     -  Create your db by running schema.sql file using MYSQL shell commands
-        -  mysql -u root -p
-        -  password - "enter your password"
-  - Sequelize  
-  - dotenv package  
+    - Sequelize  
+    - dotenv package  
+    -  MySQL2  
+        -  Create your db by running schema.sql file using MYSQL shell commands
+           -  mysql -u root -p  
+           -  password - "enter your password"  
+           -  source db/schema.sql  
+           -  quit (this is going to end the sql shell = Bye)  
+        - Run seeds by typing in terminal  
+          - npm run seed  
+        - Start server  
+          - npm run watch  
+           - response on last line = App listening on port 3001!  
+        - run npm i to make sure all the dependencies are installed before you begin  
+ 
 - 
     
   
@@ -48,7 +57,7 @@ THEN I am able to connect to a database using Sequelize
 WHEN I enter schema and seed commands  
 THEN a development database is created and is seeded with test data  
 
-WHEN I enter the command to invoke the application  
+WHEN I enter the command to invoke the application  (npm start)
 THEN my server is started and the Sequelize models are synced to the MySQL database  
 
 WHEN I open API GET routes in Insomnia Core for categories, products, or tags  

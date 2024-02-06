@@ -4,12 +4,11 @@ const router = require("express").Router();
 const { Product, Category, Tag, ProductTag } = require("../../models");
 
 // The `/api/products` endpoint
+router.get("/", async (req, res) => {
 // Async and await used to handle routes asynchronously
 // Sequelize is used to fetch all products from DB
 // Get all products
 // Be sure to include its associated Category and Tag data
-router.get("/", async (req, res) => {
- 
   try {
     const productData = await Product.findAll({
       include: [
@@ -32,9 +31,9 @@ router.get("/", async (req, res) => {
 });
 
 // Get one product
+router.get("/:id", async (req, res) => {
 // Find a single product by its `id`
 // Be sure to include its associated Category and Tag data
-router.get("/:id", async (req, res) => {
   try {
     const productData = await Product.findByPk(req.params.id, {
       include: [
@@ -57,7 +56,6 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// Product.create(req.body);
 // Create new product
 router.post("/", async (req, res) => {
   /* req.body should look like this...

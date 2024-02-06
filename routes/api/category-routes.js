@@ -4,11 +4,10 @@ const router = require("express").Router();
 const { Category, Product } = require("../../models");
 
 // The `/api/categories` endpoint
-// Async and await used to handle routes asynchronously
+router.get("/", async (req, res) => {
 // Sequelize is used to fetch all catagories from DB
 // Find all categories
 // Be sure to include its associated Products
-router.get("/", async (req, res) => {
   try {
     const categoryData = await Category.findAll({
       include: [
