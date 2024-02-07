@@ -9,7 +9,6 @@ by Sheila Hanson ![Github license](https://img.shields.io/badge/license-MIT-blue
 - [Installation](#installation)
   - [User Story](#user-story)
   - [Acceptance Criteria](#acceptance-criteria)
-  - [Wireframe](#wireframe)
 - [Usage](#usage)
 - [Features](#features)
 - [Challenges](#challenges)
@@ -31,8 +30,6 @@ by Sheila Hanson ![Github license](https://img.shields.io/badge/license-MIT-blue
     -  npm install Node.js  
  - Insomnia
    - Used for testing
-          
-    
   
   ### User Story
 * AS A manager at an internet retail company  
@@ -58,11 +55,6 @@ THEN the data for each of these routes is displayed in a formatted JSON
 WHEN I test API POST, PUT, and DELETE routes in Insomnia Core  
 THEN I am able to successfully create, update, and delete data in my database   
 
-
-    
-  
-  ### Wireframe
-  [My Wireframe]()
       
 ## Usage 
 - Run schema
@@ -72,28 +64,36 @@ THEN I am able to successfully create, update, and delete data in my database
            -  password - [enter your password]  
            -  source db/schema.sql  
            -  quit (this is going to end the sql shell = Bye)  
+   ![alt text](assets/img/mysqlstartup.png)
 - Run seeds
   - JS server.js - right click server.js
       - Then open in an integrated terminal and type the follow commands in  
           - npm i (run to make sure all the dependencies are installed before you begin)
           - npm run seed  
-        - Start server  
+      - Starting the server - type the following below in the command line
           - npm run watch  
            - response on last line = App listening on port 3001!  
+  ![alt text](assets/img/npmi.png)  
+![alt text](assets/img/npmrunwatch.png)
 - Insomnia - testing will be done here
 
  - Database Model Diagram  
 ![alt text](<assets/img/EER Diagram.png>)  
   
-  DEMO: (https://)
+  DEMO: (https://app.screencast.com/aU1b38urFTnJZ?tab=Details&conversation=BSNextaR1wvQJbayXelSyM))
 
 ## Features
-- MySQL workbench database model EER diagram
-- Logo
+- MySQL workbench database model EER diagram  
+- Logo  
+- Database Model Diagram  
 
-## Challenges
-- Continuing to learn SQL Workbench
-- Gaining a better knowledge of Insomnia
+## Challenges  
+- Learning SQL Workbench  
+- Gaining deeper knowledge of Insomnia  
+- Testing and getting everything working with the correct syntx  
+- Understanding how routes index.js and api index.js communicate to each other  
+- belongsto, hasMany, belongsToMany was hard to grasp  
+
 
 ## Contributing
 [NPM](https://www.npmjs.com/package/inquirer/v/8.2.4?activeTab=readme#installation)  
