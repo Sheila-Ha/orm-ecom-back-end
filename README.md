@@ -80,7 +80,7 @@ THEN I am able to successfully create, update, and delete data in my database
  - Database Model Diagram  
 ![alt text](<assets/img/EER Diagram.png>)  
   
-  DEMO: (https://app.screencast.com/aU1b38urFTnJZ?tab=Details&conversation=BSNextaR1wvQJbayXelSyM))
+  DEMO: (https://app.screencast.com/aU1b38urFTnJZ?tab=Details&conversation=BSNextaR1wvQJbayXelSyM)
 
 ## Features
 - MySQL workbench database model EER diagram  
