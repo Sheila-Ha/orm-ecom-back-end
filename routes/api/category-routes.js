@@ -79,6 +79,7 @@ router.put("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   // Delete a category by its `id` value
+  // Example: http://localhost:3001/api/categories/7
   try {
     const categoryData = await Category.destroy({
       where: {
