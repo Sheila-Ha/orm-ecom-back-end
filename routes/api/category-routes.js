@@ -6,9 +6,9 @@ const { Category, Product } = require("../../models");
 // The `/api/categories` endpoint
 router.get("/", async (req, res) => {
   //console.log("I AM IN GET '/'");
-// Sequelize is used to fetch all catagories from DB
-// Find all categories
-// Be sure to include its associated Products
+  // Sequelize is used to fetch all catagories from DB
+  // Find all categories
+  // Be sure to include its associated Products
   try {
     const categoryData = await Category.findAll({
       include: [
@@ -20,10 +20,11 @@ router.get("/", async (req, res) => {
     res.status(200).json(categoryData);
   } catch (err) {
     res.status(500).json(err);
+    throw err;
   }
 });
 
-// Ex: http://localhost:3001/api/categories/4
+// Example: http://localhost:3001/api/categories/4
 router.get("/:id", async (req, res) => {
   //console.log(req.params.id);
   // Find one category by its `id` value
@@ -45,7 +46,7 @@ router.get("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+// The endpoint `api/category`
 router.post("/", async (req, res) => {
   // Create a new category
   try {
@@ -61,18 +62,21 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   // Update a category by its `id` value
   try {
-    const categoryData = await Category.update(req.body, {
-      where: {
-        id: req.params.id,
-      },
-    });
-    if (!categoryData) {
+    const categoryData = await Category.update(req.body,
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    if (!categoryData[0]) {
       res.status(404).json({ message: "No category found with this ID" });
       return;
     }
 
     res.status(200).json(categoryData);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });

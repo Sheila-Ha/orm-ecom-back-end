@@ -11,7 +11,11 @@ router.get("/", async (req, res) => {
   // Be sure to include its associated Product data
   try {
     const tagData = await Tag.findAll({
-      include: { model: Product },
+      include: [
+        {
+          model: Product,
+        },
+      ],
     });
     res.status(200).json(tagData);
   } catch (err) {
@@ -26,12 +30,20 @@ router.get("/:id", async (req, res) => {
   // Include its associated Product data completed
   try {
     console.log(req.params.id);
-    const tagData = await Tag.findByPk(req.params.id, {
-      include: { model: Product },
+    const tagData = await Tag.findByPk({
+      where: {
+        id: req.params.id,
+      },
+      include: [{ model: Product }],
     });
+    if (!tagData) {
+      res.status(400).json({ message: "No tag found with that ID" });
+      return;
+    }
     res.status(200).json(tagData);
   } catch (err) {
-    return res.status(500).json({ message: "No tag with this id" });
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 
@@ -41,7 +53,9 @@ router.post("/", async (req, res) => {
   // Create a new tag
   // Sequelize used to create a new tag w/ data found in req.body
   try {
-    const tagData = await Tag.create({ tag_name: req.body.tag_name });
+    const tagData = await Tag.create({
+      tag_name: req.body.tag_name,
+    });
     res.status(200).json(tagData);
   } catch (err) {
     res.status(400).json(err);
@@ -66,7 +80,7 @@ router.put("/:id", async (req, res) => {
       }
     );
     if (!tagData[0]) {
-      res.status(404).json({ message: "No tag with this id" });
+      res.status(404).json({ message: "No tag found with this id" });
       return;
     }
     // if (!tagDate[0]) {
@@ -91,8 +105,8 @@ router.delete("/:id", async (req, res) => {
       },
     });
     if (!tagData) {
-    res.status(404).json({ message: "No tag with this id" });
-    return;
+      res.status(404).json({ message: "No tag with this id" });
+      return;
     }
     res.status(200).json(tagData);
   } catch (err) {
