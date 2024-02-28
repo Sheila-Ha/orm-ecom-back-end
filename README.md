@@ -40,20 +40,20 @@ SO THAT my company can compete with other e-commerce companies
   
   ### Acceptance Criteria
 * GIVEN a functional Express.js API  
-WHEN I add my database name, MySQL username, and MySQL password to an environment variable file  
-THEN I am able to connect to a database using Sequelize  
+  WHEN I add my database name, MySQL username, and MySQL password to an environment variable file  
+  THEN I am able to connect to a database using Sequelize  
 
-WHEN I enter schema and seed commands  
-THEN a development database is created and is seeded with test data  
+  WHEN I enter schema and seed commands  
+  THEN a development database is created and is seeded with test data  
 
-WHEN I enter the command to invoke the application  (npm start)
-THEN my server is started and the Sequelize models are synced to the MySQL database  
+  WHEN I enter the command to invoke the application (npm start)  
+  THEN my server is started and the Sequelize models are synced to the MySQL database  
 
-WHEN I open API GET routes in Insomnia Core for categories, products, or tags  
-THEN the data for each of these routes is displayed in a formatted JSON  
+  WHEN I open API GET routes in Insomnia Core for categories, products, or tags  
+  THEN the data for each of these routes is displayed in a formatted JSON  
 
-WHEN I test API POST, PUT, and DELETE routes in Insomnia Core  
-THEN I am able to successfully create, update, and delete data in my database   
+  WHEN I test API POST, PUT, and DELETE routes in Insomnia Core  
+  THEN I am able to successfully create, update, and delete data in my database  
 
       
 ## Usage 
@@ -98,14 +98,14 @@ THEN I am able to successfully create, update, and delete data in my database
 ## Contributing
 [NPM](https://www.npmjs.com/package/inquirer/v/8.2.4?activeTab=readme#installation)  
 [Inquirer](https://www.npmjs.com/package/inquirer/v/8.2.4)  
-[MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web)    
-[Node.js](https://nodejs.org/docs/latest/api/) 
+[MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web)  
+[Node.js](https://nodejs.org/docs/latest/api/)  
 [Stack Overflow](https://stackoverflow.com/?newreg=67d94556b887449fa2885dadf54a5439)  
 [JS Cheatsheet](https://htmlcheatsheet.com/js/)  
 [W3school](https://www.w3schools.com/)  
 [DEV](https://dev.to/envoy_/150-badges-for-github-pnk#contact)  
 [Shields](https://shields.io/)  
-[Sequelize](https://sequelize.org/docs/v6/getting-started/)   
+[Sequelize](https://sequelize.org/docs/v6/getting-started/)  
 [YouTube](https://youtube.com)  
 [Insomnia](https://insomnia.rest)
 
